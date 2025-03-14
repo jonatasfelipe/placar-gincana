@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 0 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar .logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+.links li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.links li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Botão de ação */
+.botao_acao {
+  text-decoration: none;
+  background-color: #b9ecdd;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.botao_acao:hover {
+  background-color: #91f1d4;
+}
+
+/* Ícone de menu hamburguer */
+.hamburguer_btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dropdown menu (oculto por padrão) */
+.dropdown_menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px;
+}
+
+.dropdown_menu.open {
+  display: flex;
+  list-style: none;
+}
+
+.dropdown_menu li {
+  padding: 10px;
+  text-align: center;
+}
+
+.dropdown_menu li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.dropdown_menu li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.secaoprincipal {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url(../img/sports.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ranking{
+  width: 20vw; 
+  height: 90vh; 
+  display: flex; 
+  flex-direction: column; 
+  background-color: #b9ecdd;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 20%;
+  height: 25vh;
+  background: #b9ecdd;
+  border: #000 1px solid;
+}
+
+.regressiva {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  border-radius: 5em;
+  background-color: #91f1d4;
+}
+
+.regressiva h1,li {
+  list-style: none;
+  font-size: 3em;
+}
+
+.classificacao{
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .botao_acao {
+    display: none;
+  }
+
+  .hamburguer_btn {
+    display: block;
+  }
+}
