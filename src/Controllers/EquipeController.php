@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Equipe;
@@ -18,5 +19,9 @@ class EquipeController
     {
         return $this->Equipe->listar();
     }
+
+    public function listarEquipeDetalhada()
+    {
+        return $this->Equipe->listarEquipeDetalhada();
+    }
 }
-?>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 class Pontuacao
@@ -42,6 +43,4 @@ ORDER BY total_pontuacao DESC;";
         $stmt = $this->conn->query($sql);
         return $stmt->fetchAll();
     }
-
-    
 }

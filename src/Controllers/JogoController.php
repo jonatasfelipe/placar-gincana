@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Jogo;
@@ -18,5 +19,9 @@ class JogoController
     {
         return $this->Jogo->listar();
     }
+
+    public function listarJogosDetalhados()
+    {
+        return $this->Jogo->listarJogosDetalhados();
+    }
 }
-?>
