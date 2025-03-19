@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 class Usuario
@@ -10,12 +11,18 @@ class Usuario
         $this->conn = $db;
     }
 
-    public function cadastrar($nome, $equipe_id)
+    public function criarUsuario($nome_usuario, $cpf, $senha, $data_nascimento, $celular, $aluno_sesi, $competidor_sesi, $equipe_competidor)
     {
-        $sql = "INSERT INTO usuarios (nome, equipe_id) VALUES (:nome, :equipe_id)";
+        $sql = "INSERT INTO usuarios (nome_usuario, cpf, senha, data_nascimento, celular, aluno_sesi, competidor_sesi, equipe_competidor_sesi_id) VALUES (:nome_usuario, :cpf, :senha, :data_nascimento, :celular, :aluno_sesi, :competidor_sesi, :equipe_competidor_sesi_id)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':equipe_id', $equipe_id);
+        $stmt->bindParam(':nome_usuario', $nome_usuario);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->bindParam(':data_nascimento', $data_nascimento);
+        $stmt->bindParam(':celular', $celular);
+        $stmt->bindParam(':aluno_sesi', $aluno_sesi);
+        $stmt->bindParam(':competidor_sesi', $competidor_sesi);
+        $stmt->bindParam(':equipe_competidor_sesi_id', $equipe_competidor);
         return $stmt->execute();
     }
 

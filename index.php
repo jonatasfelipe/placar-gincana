@@ -39,56 +39,10 @@ if ($db) {
 
         </section>
 
-        <aside class="ranking">
-            <table border="1" class="classificacao">
-                <thead>
-                    <tr>
-                        <td colspan="3">
-                            <h3>Pontuação</h3>
-                        </td>
-                    </tr>
-                    <td>COLOCAÇÃO</td>
-                    <td>NOME</td>
-                    <td>PONTUAÇÃO</td>
-                </thead>
-                <tbody>
-                    <?php
-                    $posicao = 1; // Inicializa a posição
-
-                    foreach ($pontuacoes as $pontuacao) {
-                        echo "<tr>";
-                        echo "<td>" . $posicao . "º</td>"; // Exibe a colocação
-                        echo "<td>" . $pontuacao['nome_equipe'] . "</td>";
-                        echo "<td>" . $pontuacao['total_pontuacao'] . "</td>";
-                        echo "</tr>";
-
-                        $posicao++; // Incrementa a posição para a próxima equipe
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </aside>
     </main>
 
-    </body>
-
-    <script src="public/assets/js/regressiva.js"></script>
-
-    <script>
-        const toggleBtn = document.querySelector('.hamburguer_btn');
-        const toggleBtnIcon = document.querySelector('.hamburguer_btn i')
-        const dropDownMenu = document.querySelector('.dropdown_menu')
-
-        toggleBtn.onclick = function() {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList = isOpen ?
-                'fa-solid fa-xmark' :
-                'fa-solid fa-bars'
-        }
-    </script>
 <?php
+    include_once "src/Views/layout/rodape.php";
 } else {
     echo 'Erro na conexão com banco de dados!';
 }
